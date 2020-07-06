@@ -1,0 +1,17 @@
+{
+  "name": "pageant-tabulation",
+  "version": "1.0.0",
+  "description": "A system that can be used for pageantry",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "sequelize": "^6.3.0"
+  }
+}
