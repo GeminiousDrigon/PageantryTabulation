@@ -3,11 +3,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import routes from "routes";
+import NoMatch from "pages/NoMatch";
+
 function App() {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/">
+				<Route path="/" exact>
 					<div className="App">
 						<header className="App-header">
 							<img src={logo} className="App-logo" alt="logo" />
@@ -15,10 +18,19 @@ function App() {
 								Edit <code>src/App.js</code> and save to reload.
 							</p>
 							<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-								Learn React
+								Learn Reactsss
 							</a>
 						</header>
 					</div>
+				</Route>
+
+				{/* map the routes here */}
+				{routes.map(props => (
+					<Route {...props} />
+				))}
+
+				<Route>
+					<NoMatch />
 				</Route>
 			</Switch>
 		</Router>
