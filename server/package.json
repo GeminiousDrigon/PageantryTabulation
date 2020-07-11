@@ -1,10 +1,10 @@
 {
-  "name": "pageant-tabulation",
+  "name": "pageantry-tabulation-nodejs",
   "version": "1.0.0",
-  "description": "A system that can be used for pageantry",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./server/index.js",
+    "start": "node -r dotenv/config ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,6 +12,11 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
   }
 }
