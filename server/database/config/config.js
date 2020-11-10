@@ -1,5 +1,4 @@
-
-console.log(process.env);
+const DB_LOGGING = process.env.DB_LOGGING === "true" ? true : false;
 
 module.exports = {
 	development: {
@@ -12,6 +11,7 @@ module.exports = {
 		dialectOptions: {
 			bigNumberStrings: true
 		},
+		logging: DB_LOGGING,
 		migrationStorageTableName: "sequelize_meta"
 	},
 	test: {
