@@ -18,7 +18,7 @@ const server = new ApolloServer({
 	typeDefs,
 	resolvers,
 	context,
-	introspection: true,
+	introspection: false,
 	playground: {
 		settings: {
 			"editor.theme": "light"
@@ -29,7 +29,7 @@ const server = new ApolloServer({
 (async function () {
 	try {
 		await sequelize.authenticate();
-		console.log("Connection has been established to the database successfully");
+		console.log("Connection to the database has been established successfully");
 	} catch (err) {
 		console.error("Unable to connect to the database", err);
 	}
