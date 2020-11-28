@@ -1,13 +1,6 @@
-const { gql } = require("apollo-server-express");
+const query = require("./query");
+const mutation = require("./mutation");
+const models = require("./models");
+const scalar = require("./scalar");
 
-const type = gql`
-	type Query {
-		hello(testArg: String): String
-	}
-
-	type Mutation {
-		hello: String
-	}
-`;
-
-module.exports = [type];
+module.exports = [query, mutation, scalar, models];

@@ -1,14 +1,16 @@
-// TODO: Delete after making one Query and Mutation
+const { resolvers: scalars } = require("graphql-scalar")
+
 const initial = {
 	Query: {
-		hello: (obj, args, { db }, info) => {
-			console.log(db);
-			return context.user();
+		hello: (obj, args, context, info) => {
+			return "hello";
 		}
 	},
 	Mutation: {
 		hello: () => "hello"
-	}
+	},
+	
+	...scalars
 };
 
 module.exports = [initial];

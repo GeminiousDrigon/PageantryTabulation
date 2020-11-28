@@ -21,12 +21,20 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			username: {
         type: DataTypes.STRING,
+			},
+			email: {
+        type: DataTypes.STRING,
+			},
+			updatedBy: {
+				type: DataTypes.UUIDV1,
+				allowNull: false
 			}
 		},
 		{
 			sequelize,
 			modelName: "User",
-			timestamps: true
+			timestamps: true,
+			paranoid: true
 		}
 	);
 	return User;

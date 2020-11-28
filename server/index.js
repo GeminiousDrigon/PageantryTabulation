@@ -18,7 +18,7 @@ const server = new ApolloServer({
 	typeDefs,
 	resolvers,
 	context,
-	introspection: false,
+	introspection: true,
 	playground: {
 		settings: {
 			"editor.theme": "light"
