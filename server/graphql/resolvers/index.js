@@ -1,16 +1,19 @@
-const { resolvers: scalars } = require("graphql-scalar")
+const { resolvers: scalars } = require("graphql-scalar");
+const user = require("./user");
+const merge = require("lodash/merge");
+const pageant = require("./pageant");
 
 const initial = {
 	Query: {
-		hello: (obj, args, context, info) => {
-			return "hello";
+		testQuery: (obj, args, context, info) => {
+			return "Test for query";
 		}
 	},
 	Mutation: {
-		hello: () => "hello"
+		testMutation: () => "Test for mutation"
 	},
-	
+
 	...scalars
 };
 
-module.exports = [initial];
+module.exports = merge(initial, user, pageant);

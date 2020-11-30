@@ -1,28 +1,27 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Pageant extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
+	class Pageant extends Model {
+		/**
+		 * Helper method for defining associations.
+		 * This method is not a part of Sequelize lifecycle.
+		 * The `models/index` file will call this method automatically.
+		 */
+		static associate(models) {
       // define association here
-    }
-  };
-  Pageant.init(
+      this.belongsTo(models.User)
+		}
+	}
+	Pageant.init(
 		{
 			title: DataTypes.STRING,
 			description: DataTypes.STRING,
 			date: DataTypes.DATE,
-      address: DataTypes.STRING,
-      updatedBy: {
-        type: DataTypes.UUID,
-        allowNull: false
-      }
+			address: DataTypes.STRING,
+			updatedBy: {
+				type: DataTypes.UUID,
+				allowNull: false
+			}
 		},
 		{
 			sequelize,
@@ -30,6 +29,6 @@ module.exports = (sequelize, DataTypes) => {
 			timestamps: true,
 			paranoid: true
 		}
-  );
-  return Pageant;
+	);
+	return Pageant;
 };

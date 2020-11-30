@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "graphql": "^15.4.0",
     "graphql-scalar": "0.0.11",
+    "lodash": "^4.17.20",
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
     "rootpath": "^0.1.2",

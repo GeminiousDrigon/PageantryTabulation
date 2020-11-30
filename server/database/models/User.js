@@ -9,21 +9,22 @@ module.exports = (sequelize, DataTypes) => {
 		 */
 		static associate(models) {
 			// define association here
+			this.hasMany(models.Pageant);
 		}
 	}
 	User.init(
 		{
 			firstname: {
-        type: DataTypes.STRING,
+				type: DataTypes.STRING
 			},
 			lastname: {
-        type: DataTypes.STRING,
+				type: DataTypes.STRING
 			},
 			username: {
-        type: DataTypes.STRING,
+				type: DataTypes.STRING
 			},
 			email: {
-        type: DataTypes.STRING,
+				type: DataTypes.STRING
 			},
 			updatedBy: {
 				type: DataTypes.UUIDV1,
